@@ -1,3 +1,4 @@
-asciimatics==1.7.2
-Pillow==3.4.2
-pyfiglet==0.7.5
+asciimatics==1.15.0
+Pillow==12.3.0
+setuptools<81
+pyfiglet==1.0.4
