@@ -1,11 +1,16 @@
 from __future__ import print_function
-from asciimatics.renderers import FigletText, Fire, ColourImageFile, StaticRenderer
+
+import os
+import sys
+
+from asciimatics.effects import Print, Snow
+from asciimatics.exceptions import ResizeScreenError
+from asciimatics.renderers import ColourImageFile, FigletText, Fire, StaticRenderer
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
-from asciimatics.effects import Print, Snow, Cycle
-from asciimatics.exceptions import ResizeScreenError
-from pyfiglet import Figlet
-import os, sys
+
+TOP_TEXT = os.getenv("TOP_TEXT", "YULE")
+BOTTOM_TEXT = os.getenv("BOTTOM_TEXT", "LOG")
 
 YULE_LOG = ["""                                                                        .:'#'.         
                                                           `.,;;'+#@#####++++++#@;      
@@ -67,13 +72,13 @@ def yule_log(screen):
         effects += [
             Print(
                 screen,
-                FigletText("MERRY", font='univers'),
+                FigletText(TOP_TEXT, font='univers'),
                 1,
                 speed=1,
                 start_frame=5),
             Print(
                 screen,
-                FigletText("CHRISTMAS!", font='univers'),
+                FigletText(BOTTOM_TEXT, font='univers'),
                 10,
                 speed=1,
                 start_frame=15),
