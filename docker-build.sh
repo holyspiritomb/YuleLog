@@ -1,2 +1,2 @@
 
-docker build -t yule_log --rm .
+docker build -f dockerfile -t yule_log --rm .
