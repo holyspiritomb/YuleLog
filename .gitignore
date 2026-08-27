@@ -19,3 +19,4 @@ manage.py
 
 yule_log/__pycache__/*
 
+.venv
