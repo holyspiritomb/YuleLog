@@ -1,53 +1,47 @@
 from setuptools import setup
-from codecs import open
 from os import path
 
 
-__version__ = '0.0.3'
+__version__ = '0.1.0'
+__author__ = 'Hezekiah Michael'  # primarily Scott Doucet
+__url__ = 'https://github.com/holyspiritomb/YuleLog'
 
 SETUP_DIR = path.abspath(path.dirname(__file__))
 
 
-# Get the long description from the README file
-with open(path.join(SETUP_DIR, 'README')) as f:
-    long_description = f.read()
+__long_description__ = """
+``YuleLog`` is an ascii yule log fireplace for your terminal with snowfall and customizable text.
+"""
 
-
-# get the dependencies and installs
-with open(path.join(SETUP_DIR, 'requirements.txt'), encoding='utf-8') as f:
-    all_reqs = f.read().split('\n')
-
-
-install_requires = [x.strip() for x in all_reqs if 'git+' not in x]
-dependency_links = [x.strip().replace('git+', '')
-                    for x in all_reqs
-                    if x.startswith('git+')]
-
+install_requires = [
+    'asciimatics == 1.15.0',
+    'Pillow == 12.3.0',
+    'setuptools < 81',
+    'pyfiglet == 1.0.4'
+]
 
 setup(
     name='YuleLog',
     version=__version__,
-    url='https://github.com/Duroktar/YuleLog',
+    author=__author__,
+    license='MIT License',
+    url=__url__,
     packages=['yule_log'],
     package_data={'yule_log': ['yule_log.ico']},
-    license='MIT License',
-    author='Scott Doucet',
-    author_email='duroktar@gmail.com',
-    description='Terminal based X-Mas Yule Log Fireplace',
-    long_description=long_description,
-    keywords='christmas yule fireplace',
+    description='Terminal-based Yule log Fireplace',
+    long_description=__long_description__,
+    keywords='christmas yule fireplace winter holiday',
     install_requires=install_requires,
-    dependency_links=dependency_links,
+    python_requires=">=3.10",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: End Users/Desktop',
         'Topic :: Games/Entertainment',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
     ],
     entry_points={
           'console_scripts': [
