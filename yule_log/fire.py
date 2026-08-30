@@ -39,6 +39,40 @@ LOG_LENGTH = len(x[0])
 HALF_LOG_HEIGHT = LOG_HEIGHT // 2
 HALF_LOG_LENGTH = LOG_LENGTH // 2
 
+def figletfont(text):
+    accented = [
+        "à", "À",
+        "â", "Â",
+        "ä", "Ä",
+        "á", "Á",
+        "ç", "Ç",
+        "è", "È",
+        "é", "É",
+        "ê", "Ê",
+        "ë", "Ë",
+        "ì", "Ì",
+        "í", "Í",
+        "î", "Î",
+        "ï", "Ï",
+        "ñ", "Ñ",
+        "ò", "Ò",
+        "ó", "Ó",
+        "ô", "Ô",
+        "ö", "Ö",
+        "ß",
+        "ù", "Ù",
+        "ú", "Ú",
+        "û", "Û",
+        "ü", "Ü",
+        "œ", "Œ",
+        "æ", "Æ"
+    ]
+    for a in accented:
+        if a in text:
+            return "mono12"
+        else:
+            continue
+    return "univers"
 
 def yule_log(screen):
     screen_height = screen.height
@@ -72,13 +106,13 @@ def yule_log(screen):
         effects += [
             Print(
                 screen,
-                FigletText(TOP_TEXT, font='univers'),
+                FigletText(TOP_TEXT, font=figletfont(TOP_TEXT)),
                 1,
                 speed=1,
                 start_frame=5),
             Print(
                 screen,
-                FigletText(BOTTOM_TEXT, font='univers'),
+                FigletText(BOTTOM_TEXT, font=figletfont(BOTTOM_TEXT)),
                 10,
                 speed=1,
                 start_frame=15),
