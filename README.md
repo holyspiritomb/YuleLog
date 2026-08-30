@@ -8,7 +8,7 @@
 ![Python 3.14](https://badgen.net/static/Python/3.14/blue?icon=python)
 ![Dockerfile provided](https://badgen.net/static/Dockerfile/provided/blue?icon=docker)
 
-![logo](https://github.com/holyspiritomb/YuleLog/blob/main/yule_log/yule-log.jpg)
+![logo](https://github.com/holyspiritomb/YuleLog/blob/main/yule_log/screencap.svg)
 
 ## Overview
 
